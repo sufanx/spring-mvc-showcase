@@ -10,7 +10,7 @@ import org.springframework.web.context.WebApplicationContext;
 @ContextConfiguration(classes = WebMvcConfig.class)
 public class AbstractContextControllerTests {
 
-	@Autowired
-	protected WebApplicationContext wac;
+    @Autowired
+    protected WebApplicationContext wac;
 
 }

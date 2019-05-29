@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CustomArgumentController {
 
-	@ModelAttribute
-	void beforeInvokingHandlerMethod(HttpServletRequest request) {
-		request.setAttribute("foo", "bar");
-	}
-	
-	@GetMapping("/data/custom")
-	public String custom(@RequestAttribute("foo") String foo) {
-		return "Got 'foo' request attribute value '" + foo + "'";
-	}
+    @ModelAttribute
+    void beforeInvokingHandlerMethod(HttpServletRequest request) {
+        request.setAttribute("foo", "bar");
+    }
+
+    @GetMapping("/data/custom")
+    public String custom(@RequestAttribute("foo") String foo) {
+        return "Got 'foo' request attribute value '" + foo + "'";
+    }
 
 }

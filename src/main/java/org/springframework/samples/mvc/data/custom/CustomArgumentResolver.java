@@ -9,16 +9,15 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 
 public class CustomArgumentResolver implements HandlerMethodArgumentResolver {
 
-	public boolean supportsParameter(MethodParameter parameter) {
-		return parameter.getParameterAnnotation(RequestAttribute.class) != null;
-	}
+    public boolean supportsParameter(MethodParameter parameter) {
+        return parameter.getParameterAnnotation(RequestAttribute.class) != null;
+    }
 
-	public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
-			NativeWebRequest webRequest, WebDataBinderFactory binderFactory)
-			throws Exception {
+    public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
+                                  NativeWebRequest webRequest, WebDataBinderFactory binderFactory) {
 
-		RequestAttribute attr = parameter.getParameterAnnotation(RequestAttribute.class);
-		return webRequest.getAttribute(attr.value(), WebRequest.SCOPE_REQUEST);
-	}
-	
+        RequestAttribute attr = parameter.getParameterAnnotation(RequestAttribute.class);
+        return webRequest.getAttribute(attr.value(), WebRequest.SCOPE_REQUEST);
+    }
+
 }

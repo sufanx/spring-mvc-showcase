@@ -9,31 +9,18 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import lombok.Data;
+
+@Data
 public class JavaBean {
-	
-	@NotNull
-	@Max(5)
-	private Integer number;
 
-	@NotNull
-	@Future
-	@DateTimeFormat(iso=ISO.DATE)
-	private Date date;
+    @NotNull
+    @Max(5)
+    private Integer number;
 
-	public Integer getNumber() {
-		return number;
-	}
-
-	public void setNumber(Integer number) {
-		this.number = number;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
+    @NotNull
+    @Future
+    @DateTimeFormat(iso = ISO.DATE)
+    private Date date;
 
 }

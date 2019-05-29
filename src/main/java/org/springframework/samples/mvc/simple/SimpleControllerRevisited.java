@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SimpleControllerRevisited {
 
-	@GetMapping(path="/simple/revisited", headers="Accept=text/plain")
-	public String simple() {
-		return "Hello world revisited!";
-	}
+    @GetMapping(path = "/simple/revisited", headers = "Accept=text/plain")
+    public String simple() {
+        return "Hello world revisited!";
+    }
 
 }
